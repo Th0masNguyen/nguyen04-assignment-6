@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linear Regression Simulation</title>
+</head>
+<body>
+    <h1>Linear Regression Simulation</h1>
+    <form method="post">
+        <label for="N">N:</label>
+        <input type="text" id="N" name="N" value="{{ N }}" required><br>
+
+        <label for="mu">Mu:</label>
+        <input type="text" id="mu" name="mu" value="{{ mu }}" required><br>
+
+        <label for="sigma2">Sigma^2:</label>
+        <input type="text" id="sigma2" name="sigma2" value="{{ sigma2 }}" required><br>
+
+        <label for="S">S:</label>
+        <input type="text" id="S" name="S" value="{{ S }}" required><br>
+
+        <input type="submit" value="Generate">
+    </form>
+
+    {% if plot1 %}
+    <h2>Scatter Plot</h2>
+    <img src="{{ plot1 }}" alt="Scatter Plot">
+    {% endif %}
+
+    {% if plot2 %}
+    <h2>Histogram</h2>
+    <img src="{{ plot2 }}" alt="Histogram">
+    {% endif %}
+
+    <p>Proportion of more extreme slopes: {{ slope_extreme }}</p>
+    <p>Proportion of more extreme intercepts: {{ intercept_extreme }}</p>
+</body>
+</html>
